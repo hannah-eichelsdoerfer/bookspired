@@ -1,0 +1,5 @@
+<div class="container">
+  <h1> <%= @bookshelf.title %> </h1>
+  
+  <p><%= link_to icon('fas', 'plus', 'Add a book to this list'), new_book_path(@bookshelf) %></p>
+</div>
