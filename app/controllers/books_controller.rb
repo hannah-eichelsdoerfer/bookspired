@@ -5,13 +5,14 @@ class BooksController < ApplicationController
   
   def new
     @book = Book.new
+    @book.build_author
   end
 
   def create
     @book = Book.new(book_params)
     if @book.save
       flash[:success] = "Book successfully created"
-      redirect_to @bookshelf
+      redirect_to books_path
     else
       flash[:error] = "Something went wrong"
       render 'new'
@@ -25,7 +26,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :summary, :cover, :isbn)
+    params.require(:book).permit(:title, :summary, :cover, :isbn, author_attributes: [:first_name, :last_name])
   end
   
 end
