@@ -1,5 +1,6 @@
 class BookshelvesController < ApplicationController
   def index
+    # @bookshelves = current_user.bookshelves
     @bookshelves = Bookshelf.all
   end
 
@@ -27,6 +28,6 @@ class BookshelvesController < ApplicationController
   private
 
   def bookshelf_params
-    params.require(:bookshelf).permit(:title, :user_id)
+    params.require(:bookshelf).permit(:name)
   end
 end

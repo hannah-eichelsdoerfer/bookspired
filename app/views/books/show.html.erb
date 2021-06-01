@@ -1,5 +1,4 @@
-<div class="container">
-  <h1> <%= @book.title %> </h1>
-  <h2> <%= @book.author.last_name  %> <%= @book.author.first_name %> </h2>
-  <%= image_tag @book.cover %>
-</div>
+<h1> <%= @book.title %> </h1>
+<h2> <%= @book.author.last_name  %> <%= @book.author.first_name %> </h2>
+<%= image_tag @book.cover %>
+<%= link_to "Want to read", bookshelf_path(title: "Want to read") %>

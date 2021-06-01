@@ -1,16 +1,14 @@
-<div class="container">
-  <h1>All Books</h1>
-  <ul>
-    <% @books.each do |book| %>
-      <li>
-        <% if book.cover %>
-          <%= image_tag book.cover %>
-        <% else %>
-          "No Cover"
-        <% end %>
-        <%= link_to book.title, book_path(book) %> | <%= book.author.fullname  %>
-      </li>
-    <% end %>
-  </ul>
-  <%= link_to "Add a book to database", new_book_path %>
-</div>
+<h1>All Books</h1>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <% if book.cover %>
+        <%= image_tag book.cover %>
+      <% else %>
+        "No Cover"
+      <% end %>
+      <%= link_to book.title, book_path(book) %> | <%= book.author.fullname  %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add a book to database", new_book_path %>
